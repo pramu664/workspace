@@ -1,0 +1,122 @@
+body {
+    font-family: monospace;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+#user {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#mailbox-header {
+    text-align: center;
+}
+
+#emails-view {
+    border-radius: 5px;
+}
+
+.email {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.sender {
+    float: left;
+}
+
+.recipient {
+    float: left;
+}
+
+
+.time {
+    float: right;
+}
+
+
+.btn-outline-primary {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color:black;
+}
+
+.btn-outline-primary:hover {
+    background-color: rgba(0, 0, 0, 0.151);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: monospace;
+    color:black;
+    margin: 1rem 0 1rem 0;
+}
+
+.btn-primary:hover {
+    background-color: 1px solid rgba(0, 0, 0, 0.301);
+}
+
+
+.email.dragging {
+    opacity: 0.3;
+}
+
+.email:hover {
+    border: 1px solid rgba(0, 0, 0, 0.301);
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container > form > .form-group {
+    width: 400px;
+}
+
+.login-container > form > .form-group {
+    width: 400px;
+}
+
+
+.login {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.message {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: red;
+}
+
+.register {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.link-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin-top: 0.4rem;
+}

@@ -22,4 +22,5 @@ urlpatterns = [
     path ("newyear/", include ("newyear.urls")),
     path ("tasks/", include ("tasks.urls")),
     path ('encyclopedia/', include ('encyclopedia.urls')),
+    path ("mail/", include ("mail.urls")),
 ]

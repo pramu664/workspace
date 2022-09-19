@@ -1,5 +1,8 @@
 # notes on task managment app
 
+# NOTES
+
+
 ## Stying
 
 Go in to the app's directory and create a directory called 'static' and in that folder create a file called styles.css.
