@@ -1,0 +1,134 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+
+<a href="{% url 'tasks:index' %}">View all Tasks|</a>
+<a href="{% url 'tasks:add' %}">Add tasks</a>
+<hr />
+
+<h1>Week 0 Functions</h1>
+
+<h2>String Methods</h2>
+
+<h2>str</h2>
+<a>https://docs.python.org/3/library/stdtypes.html#string-methods</a>
+<p>strip()</p>
+<p>removing whitespace</p>
+<p>title()</p>
+<p>split()</p>
+
+<h2>int</h2>
+<p>Joins the two strings</p>
+<p>Comming from the keyboard as strings</p>
+<p>back in to my code</p>
+<p>Int not also type of data in python it also function <code>int</code></p>
+<p>Convert the string in to actual number to perform mathematics</p>
+<p>perform mathematics</p>
+<p>Up and down arrow</p>
+<p>Don't create variables that just use only once.</p>
+<p>you can put nest functions</p>
+<p>return value of the inner functions just becomes arguments to the outer function.</p>
+<p>focus on the inner most parenthecis and walk you way out</p>
+<p>python dot calculator.py enter cool phrase to get instantiating for my other programs</p>
+<p>earlia version easiar to debug</p>
+<p>You should have the justification</p>
+<p>Prioritizing readablity is very good</p>
+<p>Simplecity</p>
+<p>nesting too many<p>
+<p>Increse the probability of mistakes syntaxticle and logical</p>
+
+<h2>float</h2>
+<p>Number with a decimal point</p>
+<p>matematically it's real number</p>
+<p>python supports</p>
+<p>back to vscode: instance idea</p>
+<p>let's type in a number like 1.2 with a decimal point</p>
+<p>expecting floating point</p>
+<p>I don't want to be final answer to be a floating point value</p>
+<p>I would be happy if we just rounds to the nearest integer</p>
+<p>rounds to the nearest integer</p>
+<p>but end of the day I want to round the float to nearest possible integer, for instance
+<p>Well it turns out</p>
+<p>docs.python.org/3/library/functions.html#round</p>
+<p>rounds for us, for instance to the nearest integer</p>
+<p>round (number [, ndigits])</p>
+<p>little criptic too</p>
+<p>just one number for first argument</p>
+<p>positional parameter</p>
+<p>notice no star hear</p>
+<p>if you see square brackets in generally means you about to see somthing optionl</p>
+<p>if you want to specify the number of digits,</p>
+<p>that your round function to round to: I want my round function to round to this many digits</p>
+<p>you can specify hear by adding a comma and number</p>
+<p>if you don't specify, it rounds to the nearest integer</p>
+<p>tenth place or hundred place<p>
+<p>specify comma 1, comma 2</p>
+<p>translate in to actual code</p>
+<p>reasonable people might disagree</p>
+<p>I am little more comfortable breaking my thoughts in to one at a time</p>
+<p>Specially if I wan to commenting each of these chunks of code</p>
+<p>let's do 1.4</p>
+<p>then let's do 3.4</p>
+<p>What if I want to support really big numbers</p>
+<p>In us we tend to format long numbers by putting commas after or before every triple of digits</p>
+<p>format long numbers by putting commas</p>
+<p>after or before every triple of digits</p>
+<p>What if I want this output to be one comma zero zero and zero: 1,000</p>
+<p>Just to make it a little more clear</p>
+<p>one million one comma zero zero zero comma zero zero zero</p>
+<p>It be nice if we automatically output those numbers as well?</p>
+<p>Well, it turns out that we can</p>
+<p>There is a way using python to actually specify that we can include commas like this</p>
+<p>here we have an opportunity to bring back our old friend, the F string</p>
+<p>First, let's me do something not that productive</p>
+<p>wait a minite I can't just do that</p>
+<p>so let me wrap with curly braces</p>
+<p>just to ensure that I haven't broken </p>
+<p>ensure</p>
+<p>ok, I didn't make anything worse</p>
+<p>worse</p>
+<p>print (f"{z:,}")</p>
+<p>This looks very cryptic, admittedly</p>
+<p>constantly look things like this up in the documentation</p>
+<p>to remeber the syntax</p>
+<p>let me run it again</p>
+<p>on floats, on rounding or on F strings</p>
+<p>floats cannot represent</p>
+<p>infinitely precisely</p>
+<p>finite amount of memory</p>
+<p>x divide by y</p>
+<p>keep it simple</p>
+<p>simple division</p>
+<p>By contrast, just so you know, integers nowadays in python can be as big as you want them to be.</p>
+<p>integers nowaday in python</p>
+<p>big as you want them to be</p>
+<p>unlike other languages there is no upper bound in python</p>
+<p>but there is a bound on python to a floating point how precise a floating point value can be</p>
+<p>how precise a floting point value can be</p>
+<p>there is a bound on python</p>
+<p>now that I've got some simple division working here</p>
+<p>not to the nearest int round (x / y, 2)</p>
+<p>there is a another way to do this hear</p>
+<p>suppose that some reason that you didn't remeber the round function</p>
+<p>or you don't want to use it you instead want to just use a format string</p>
+<p>let me do quote and quote zee, let me surround with curly braces let me add the f at the beginning.</p>
+<p>if this is going to be big integer I might want to use a comman like before to seperate each triple of numbers</p>
+<p>triple of number</p>
+<p>I might want to use</p>
+<p>I'm  goint to say 0.2F</p>
+<p>print (f"{z:.2f}")</p>
+<p>and this too is very crypitc things that I have to constantly look up</p>
+<p>I forget if I don't use it that often</p>
+<p>don't be intimidated if this looks especially weird</p>
+<p>don't be intimidated</p>
+<p>according to the documentation the way you specify using an F string how many digits you want to print</p>
+<p>Now let me run this version of the calculator..</p>
+<p>in programming we can so very often solve the same problem in multiple way</p>
+<p>F string approach</p>
+<p>which one is better</p>
+<p>it depends</p>
+<p>let's transition now from focusing on string and on integers and on floats to focusing on functions themselvers</p>
+<p>we began today by focusing on how we can use functions that come with Python but wouldn't it be nice if you could invent your own functions.</p>
+<p>invent your own functions</p>
+TODO for tomorrow...
+{% endblock %}

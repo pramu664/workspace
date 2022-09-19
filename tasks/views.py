@@ -30,3 +30,8 @@ def add(request):
         return render(request, "tasks/add.html", {
             "form": NewTaskForm()
         })
+
+
+def notes (request):
+    return render (request, "tasks/notes.html")
+
