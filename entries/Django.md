@@ -22,3 +22,6 @@ https://docs.djangoproject.com/en/4.1/ref/templates/language/#template-inheritan
 
 ## Examples of url configurations
 https://docs.djangoproject.com/en/4.1/topics/http/urls/#examples
+
+## URL namespaces
+https://docs.djangoproject.com/en/4.1/topics/http/urls/#url-namespaces
