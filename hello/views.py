@@ -20,3 +20,4 @@ def greet1(request, name):
     return render(request, "hello/greet.html", {
         "name": name.capitalize()
     })
+
