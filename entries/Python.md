@@ -10,3 +10,10 @@ https://docs.python.org/3/library/stdtypes.html#str.find
 
 ## set
 https://docs.python.org/3/library/stdtypes.html#set
+
+## str.lower()
+https://docs.python.org/3/library/stdtypes.html#str.lower
+
+## str.strip([chars])
+https://docs.python.org/3/library/stdtypes.html#str.strip
+

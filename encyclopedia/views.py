@@ -72,3 +72,45 @@ def search (request):
     
 
 
+
+def new_page (request):
+    if request.method == 'POST':
+        
+        # Get the title and content and remove the whitespace
+        title = request.POST["title"].strip()
+        content = request.POST["content"].strip()
+        
+        # Check to see title or content provided
+        if (not title) or (not content):
+            return HttpResponse ("Title/Content must be provide")
+
+
+        # make the title to lowercase
+        cleaned_title = title.lower()
+
+        # Get all the entries
+        entries = util.list_entries()
+
+        # make all the entries to lower case and add to the set
+        cleaned_entries = set ()
+        for entry in entries:
+            cleaned_entries.add(entry.lower())
+        
+        # Check to see entry is already in the set
+        if cleaned_title in cleaned_entries:
+            return render (request, "encyclopedia/error.html")
+        
+        # save the entry to disk
+        util.save_entry (title, content)
+
+        # Go to new entry page
+        return HttpResponseRedirect (reverse ("encyclopedia:new_page"))
+
+    return render(request, "encyclopedia/new_page.html")
+
+
+
+
+
+
+
