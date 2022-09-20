@@ -25,3 +25,12 @@ https://docs.djangoproject.com/en/4.1/topics/http/urls/#examples
 
 ## URL namespaces
 https://docs.djangoproject.com/en/4.1/topics/http/urls/#url-namespaces
+
+## reverse()
+https://docs.djangoproject.com/en/4.1/ref/urlresolvers/#reverse
+
+## HttpResponseRedirect
+https://docs.djangoproject.com/en/4.1/ref/request-response/#django.http.HttpResponseRedirect
+
+## Request and response objects
+https://docs.djangoproject.com/en/4.1/ref/request-response/#module-django.http
