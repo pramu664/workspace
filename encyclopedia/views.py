@@ -82,8 +82,10 @@ def new_page (request):
         
         # Check to see title or content provided
         if (not title) or (not content):
-            return HttpResponse ("Title/Content must be provide")
-
+            message = "Missing title/content"
+            return render (request, "encyclopedia/new_page.html", {
+                "message": message,
+            })
 
         # make the title to lowercase
         cleaned_title = title.lower()
@@ -101,7 +103,7 @@ def new_page (request):
             return render (request, "encyclopedia/error.html")
         
         # save the entry to disk
-        util.save_entry (title, content)
+        #util.save_entry (title, content)
 
         # Go to new entry page
         return HttpResponseRedirect (reverse ("encyclopedia:new_page"))

@@ -8,6 +8,10 @@
 
 {% block body %}
 	<h1>New Page</h1>
+	
+	{% if message %}
+	<li>{{ message }}</li>
+	{% endif %}
 
 	<form action="{% url 'encyclopedia:new_page' %}" method="post">
 		{% csrf_token %}
