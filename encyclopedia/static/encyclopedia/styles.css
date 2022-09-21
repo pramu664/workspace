@@ -17,22 +17,36 @@ textarea {
     width: 80%;
 }
 
+li {
+	list-style: none;
+}
+
 .main {
     padding: 10px;
 }
 
-.search {
-    width: 100%;
-    font-size: 15px;
-    line-height: 15px;
-}
+
+
 
 .sidebar {
+		height: 10vh;
     background-color: #f0f0f0;
-    height: 100vh;
     padding: 20px;
 }
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+/* My Design */
+
+.search {
+    width: 50%;
+    font-size: 15px;
+    line-height: 15px;
+		border: none;
+}
+
+.search:focus {
+		outline: none;
 }

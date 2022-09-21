@@ -10,7 +10,9 @@
 <h1>Edit Page</h1>
 <form action="{% url 'encyclopedia:edit_page' %}" method="post">
 	{% csrf_token %}
-	<textarea name="content" value="{{ entry }}">{{ entry }}</textarea>
+	{{ temp.as_p }}
+	<textarea>{{ entry }}</textarea>
+	<input type="hidden" value="{{ entry }}" name="content" >
 	<input  type = "hidden" name="title" value="{{ title }} " />
 	<input type="submit" value="Save" />
 </form>

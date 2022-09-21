@@ -17,3 +17,7 @@ https://docs.python.org/3/library/stdtypes.html#str.lower
 ## str.strip([chars])
 https://docs.python.org/3/library/stdtypes.html#str.strip
 
+
+## Buit-in Exceptions
+https://docs.python.org/3/library/exceptions.html#bltin-exceptions
+

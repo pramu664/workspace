@@ -2,9 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django import forms
 
 from . import util
+
+import random
 
 
 def index(request):
@@ -104,7 +105,7 @@ def new_page (request):
             return render (request, "encyclopedia/error.html")
         
         # save the entry to disk
-        #util.save_entry (title, content)
+        util.save_entry (cleaned_title, content)
 
         # Go to new entry page
         return HttpResponseRedirect (reverse ("encyclopedia:new_page"))
@@ -114,33 +115,34 @@ def new_page (request):
 
 
 def edit_page (request):
+    
+    # POST CASE
+
     if request.method == 'POST':
         
         # Get the title
         title = request.POST["title"]
+
         # Get the content
         content = request.POST["content"]
-
-        # Get all entries
-        entries = util.get_entries ()
-
-        # Remove the entries that name 'entry'
-
+        
         # save the  edited entry to the disk
         util.save_entry (title, content)
 
+
+
         return HttpResponseRedirect (reverse ("encyclopedia:title", args=[title]))
+
+    # GET CASE
         
     # Get entry title from request 
     entry_title = request.GET["title"]
 
     # Get entry from the entries
     entry  = util.get_entry (entry_title)
+   
 
-
-
-
-    
+   # Output html page with populated contents.
     return render (request, "encyclopedia/edit_page.html", {
         "title": entry_title,
         "entry": entry,
@@ -149,7 +151,6 @@ def edit_page (request):
 
 
 
-import random
 def random_page (request):
     # Get all entries
     entries = util.list_entries ()
