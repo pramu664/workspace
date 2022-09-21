@@ -120,9 +120,13 @@ def edit_page (request):
         title = request.POST["title"]
         # Get the content
         content = request.POST["content"]
-        
 
-        # save the entry to the disk
+        # Get all entries
+        entries = util.get_entries ()
+
+        # Remove the entries that name 'entry'
+
+        # save the  edited entry to the disk
         util.save_entry (title, content)
 
         return HttpResponseRedirect (reverse ("encyclopedia:title", args=[title]))
@@ -133,6 +137,9 @@ def edit_page (request):
     # Get entry from the entries
     entry  = util.get_entry (entry_title)
 
+
+
+
     
     return render (request, "encyclopedia/edit_page.html", {
         "title": entry_title,
@@ -140,5 +147,18 @@ def edit_page (request):
     })
 
 
+
+
+import random
+def random_page (request):
+    # Get all entries
+    entries = util.list_entries ()
+
+    # Get random entry 
+    num = random.randint (0, len(entries) - 1)
+    random_entry = entries[num]
+
+    # Redirect to that entry page
+    return HttpResponseRedirect (reverse ("encyclopedia:title", args=[random_entry]))
 
 
