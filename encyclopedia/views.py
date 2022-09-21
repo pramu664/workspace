@@ -112,15 +112,20 @@ def new_page (request):
     return render(request, "encyclopedia/new_page.html")
 
 
-def edit_page (request):
-    #if request.method == 'POST':
 
+def edit_page (request):
+    if request.method == 'POST':
+        
         # Get the title
-    #    title = request.POST["title"]
+        title = request.POST["title"]
         # Get the content
-    #    content = request.POST["content"]
+        content = request.POST["content"]
+        
+
         # save the entry to the disk
-    #    util.save_entry (title, content)
+        util.save_entry (title, content)
+
+        return HttpResponseRedirect (reverse ("encyclopedia:title", args=[title]))
         
     # Get entry title from request 
     entry_title = request.GET["title"]
