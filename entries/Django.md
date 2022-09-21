@@ -34,3 +34,8 @@ https://docs.djangoproject.com/en/4.1/ref/request-response/#django.http.HttpResp
 
 ## Request and response objects
 https://docs.djangoproject.com/en/4.1/ref/request-response/#module-django.http
+
+
+## Django Exceptions
+https://docs.djangoproject.com/en/4.1/ref/exceptions
+

@@ -24,6 +24,7 @@ def entry (request, title):
 
     # display the entry page
     return render (request, "encyclopedia/entry.html", {
+        "title": title,
         "entry": entry,
     })
 
@@ -111,7 +112,27 @@ def new_page (request):
     return render(request, "encyclopedia/new_page.html")
 
 
+def edit_page (request):
+    #if request.method == 'POST':
 
+        # Get the title
+    #    title = request.POST["title"]
+        # Get the content
+    #    content = request.POST["content"]
+        # save the entry to the disk
+    #    util.save_entry (title, content)
+        
+    # Get entry title from request 
+    entry_title = request.GET["title"]
+
+    # Get entry from the entries
+    entry  = util.get_entry (entry_title)
+
+    
+    return render (request, "encyclopedia/edit_page.html", {
+        "title": entry_title,
+        "entry": entry,
+    })
 
 
 
