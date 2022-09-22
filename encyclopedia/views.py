@@ -6,6 +6,7 @@ from django.urls import reverse
 from . import util
 
 import random
+import re
 
 
 def index(request):
@@ -23,10 +24,16 @@ def entry (request, title):
         # display error page
         return render (request, "encyclopedia/error.html")
 
+    html_entry = re.sub ("###(.+)", r"<h5>\1</h5>", entry)
+    html_entry = re.sub ("##(.+)", r"<h3>\1</h3>", html_entry)
+    html_entry = re.sub ("#(.+)", r"<h1>\1</h1>", html_entry)
+    html_entry = re.sub ("\[(.+)\]\((.+)\)", r"<a href='\2'>\1</a>", html_entry)
+    html_entry = re.sub ("\*(.+)", r"<i>\1</i>", html_entry)
+
     # display the entry page
     return render (request, "encyclopedia/entry.html", {
         "title": title,
-        "entry": entry,
+        "entry": html_entry,
     })
 
 

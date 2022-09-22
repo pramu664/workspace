@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body %}
-		{{ entry }}
+		{{ entry|safe }}
 		<form action="{% url 'encyclopedia:edit_page' %}" method="get">
 			<input type="hidden" name = "title" value="{{ title }}">
 			<input type="submit" value="Edit">

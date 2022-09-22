@@ -11,6 +11,7 @@
     </head>
     <body>
 			<div class="row">
+
 				<div class="sidebar col-lg-2 col-md-3">
 
 					<form action="{% url 'encyclopedia:search' %}" method="get"  >
@@ -31,12 +32,14 @@
 
 					{% block nav %}
 					{% endblock %}
+
 				</div>
 
 				<div class="main col-lg-10 col-md-9">
 						{% block body %}
 						{% endblock %}
 				</div>
+
 			</div>
 
     </body>
