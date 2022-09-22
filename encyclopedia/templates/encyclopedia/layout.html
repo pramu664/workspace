@@ -10,33 +10,34 @@
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
     </head>
     <body>
+			<div class="row">
+				<div class="sidebar col-lg-2 col-md-3">
 
-			<div class="inbox-container">
-
-				<div class="home">
-					<a href="{% url 'encyclopedia:index' %}"><h3>🏠<h3></a>
-				</div>
-				
-				<div class="new">
-					<a href="{% url 'encyclopedia:new_page' %}"><h3>📄</h3></a>
-				</div>
-				
-				<div class="random">	
-					<a href="{% url 'encyclopedia:random_page' %}"><h3>📜</h3></a>
-				</div>
-
-			</div>
-
-				<div class="searchBar-container">
-					<form action="{% url 'encyclopedia:search' %}" method="get" class="search-form" >
-							<input class="search-form-control" type="text" name="q" placeholder="search notes">
+					<form action="{% url 'encyclopedia:search' %}" method="get"  >
+							<input class="search" type="text" name="q" placeholder="search notes">
 					</form>
+
+					<div>
+						<a href="{% url 'encyclopedia:index' %}">Home</a>
+					</div>
+
+					<div>
+						<a href="{% url 'encyclopedia:new_page' %}">Create New Page</a>
+					</div>
+	
+					<div>
+						<a href="{% url 'encyclopedia:random_page' %}">Random Page</a>
+					</div>
+
+					{% block nav %}
+					{% endblock %}
 				</div>
 
-						{% block nav %}
-						{% endblock %}
+				<div class="main col-lg-10 col-md-9">
 						{% block body %}
 						{% endblock %}
+				</div>
+			</div>
 
     </body>
 </html>
