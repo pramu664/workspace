@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -14,27 +15,30 @@
 
 				<div class="home">
 					<a href="{% url 'encyclopedia:index' %}"><h3>🏠<h3></a>
-
+				</div>
+				
+				<div class="new">
+					<a href="{% url 'encyclopedia:new_page' %}"><h3>📄</h3></a>
+				</div>
+				
+				<div class="random">	
+					<a href="{% url 'encyclopedia:random_page' %}"><h3>📜</h3></a>
 				</div>
 
-
-				
-					<a href="{% url 'encyclopedia:new_page' %}">new</a>
-					<a href="{% url 'encyclopedia:random_page' %}">random</a>
+			</div>
 
 				<div class="searchBar-container">
-					<form action="{% url 'encyclopedia:search' %}" method="get" >
-							<input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+					<form action="{% url 'encyclopedia:search' %}" method="get" class="search-form" >
+							<input class="search-form-control" type="text" name="q" placeholder="search notes">
 					</form>
 				</div>
 
-				<div class="all-pages">
 						{% block nav %}
 						{% endblock %}
 						{% block body %}
 						{% endblock %}
-				</div>
-			</div>
 
     </body>
 </html>
+
+

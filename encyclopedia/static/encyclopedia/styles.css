@@ -34,16 +34,55 @@ textarea {
 }
 
 
+.inbox-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 
-/* Home program's user-interface styling  */
 
-.home {
-	margin: 20px 20px 20px 30px;	
+.home, .new, .random {
+	margin: 0 auto;
+	margin: 20px 20px 20px 35px;	
 
 }
 
-.home > a {
+.search-form {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.search-form-control{
+	width: 100%;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.home > a, .new > a, .random > a {
 	text-decoration: none;
+}
+
+
+
+li {
+	list-style-type: none;
+}
+
+.all-pages {
+	margin-top: 20px;
+}
+
+.all-pages > li > a {
+	color: #fff;
+}
+
+.all-pages > li {
+	margin-top: 5px;
+}
+
+
+.searchBar-container {
+	margin: 10px 0 0 10px;
 }
 
 

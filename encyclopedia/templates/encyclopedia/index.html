@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <ul>
+    <ul class="all-pages">
         {% for entry in entries %}
 				<li><a href="{% url 'encyclopedia:title' entry %}">{{ entry }}</a></li>
         {% endfor %}
