@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: white;
+    background-color: black;
 }
 
 code {
@@ -17,15 +17,10 @@ textarea {
     width: 80%;
 }
 
-li {
-	list-style: none;
-}
 
 .main {
     padding: 10px;
 }
-
-
 
 
 .sidebar {
@@ -38,15 +33,18 @@ li {
     margin-top: 5px;
 }
 
-/* My Design */
 
-.search {
-    width: 50%;
-    font-size: 15px;
-    line-height: 15px;
-		border: none;
+
+/* Home program's user-interface styling  */
+
+.home {
+	margin: 20px 20px 20px 30px;	
+
 }
 
-.search:focus {
-		outline: none;
+.home > a {
+	text-decoration: none;
 }
+
+
+
