@@ -21,3 +21,5 @@ def greet1(request, name):
         "name": name.capitalize()
     })
 
+def css_layout (request):
+    return render (request, "hello/css_layout.html")

@@ -1,0 +1,64 @@
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS Layouts</title>
+		<link rel="stylesheet" href="{% static 'hello/styles.css' %}" />
+	</head>
+	<body>
+		<h1>CSS Layouts</h1>
+		<p>How to correctely arrage your boxes in relation to the viewport as well as to one another</p>
+		
+		<ul>
+			<li class="one">Home</li>
+			<li class="two">About</li>
+			<li class="three">Projects</li>
+		</ul>
+	<hr />
+		<div class="img"></div>
+		<p>[23/Sep/2022 05:59:21] "GET /static/hello/styles.css HTTP/1.1" 200 72
+[23/Sep/2022 06:00:59] "GET /hello/css_layout HTTP/1.1" 200 445
+[23/Sep/2022 06:00:59] "GET /static/hello/styles.css HTTP/1.1" 200 122
+[23/Sep/2022 06:01:25] "GET /hello/css_layout HTTP/1.1" 200 445
+[23/Sep/2022 06:01:25] "GET /static/hello/styles.css HTTP/1.1" 200 122
+[23/Sep/2022 06:01:59] "GET /hello/css_layout HTTP/1.1" 200 461
+[23/Sep/2022 06:01:59] "GET /static/hello/styles.css HTTP/1.1" 304 0
+[23/Sep/2022 06:02:09] "GET /hello/css_layout HTTP/1.1" 200 461
+[23/Sep/2022 06:02:09] "GET /static/hello/styles.css HTTP/1.1" 304 0
+[23/Sep/2022 06:02:21] "GET /hello/css_layout HTTP/1.1" 200 483
+[23/Sep/2022 06:02:21] "GET /static/hello/styles.css HTTP/1.1" 304 0
+[23/Sep/2022 06:02:48] "GET /hello/css_layout HTTP/1.1" 200 445
+[23/Sep/2022 06:02:48] "GET /static/hello/styles.css HTTP/1.1" 200 122
+[23/Sep/2022 06:03:22] "GET /hello/css_layout HTTP</p>
+		<hr />
+		<p>Hello world below my website address</p>
+		<a href="https://google.com">my website</a>
+
+		<hr />
+
+		<h2>Grid</h2>
+		<div class="wrapper">
+			<div class="box1">One</div>
+			<div class="box2">Two</div>
+			<div class="box3">Three</div>
+			<div class="box4">Four</div>
+			<div class="box5">Five</div>
+			<div class="box6">Six</div>
+		</div>
+
+		<div class="container">
+			<div class="child1"></div>
+			<div class="child2"></div>
+			<div class="child3"></div>
+		</div>
+	</body>
+	
+</html>
+
+
+

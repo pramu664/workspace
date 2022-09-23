@@ -24,12 +24,27 @@ def entry (request, title):
         # display error page
         return render (request, "encyclopedia/error.html")
 
-    html_entry = re.sub ("###(.+)", r"<h5>\1</h5>", entry)
-    html_entry = re.sub ("##(.+)", r"<h3>\1</h3>", html_entry)
-    html_entry = re.sub ("#(.+)", r"<h1>\1</h1>", html_entry)
+    # CONVERT MARKDOWN TO HTML
+
+    # TODO: Headings
+    html_entry = re.sub ("#(.+)", r"<h1>\1</h1>", entry)
+
+    # TODO: links external link detection
     html_entry = re.sub ("\[(.+)\]\((.+)\)", r"<a href='\2'>\1</a>", html_entry)
+
+    # TODO  boldfase text: contain bugs
+    html_entry = re.sub ("\*\*(.+)\*\*", r"<b>\1</b>", html_entry)
+
+    # TODO italasize text: contain bugs
     html_entry = re.sub ("\*(.+)", r"<i>\1</i>", html_entry)
 
+    # paragraphs
+    html_entry = re.sub ("(\n)", r"<br />", html_entry)
+
+    # TODO: Unorderd list
+    # html_entry = re.sub ("", "<li>\1</li>", html_entry)
+    
+    
     # display the entry page
     return render (request, "encyclopedia/entry.html", {
         "title": title,
@@ -121,43 +136,6 @@ def new_page (request):
 
 
 
-def edit_page (request):
-    
-    # POST CASE
-
-    if request.method == 'POST':
-        
-        # Get the title
-        title = request.POST["title"]
-
-        # Get the content
-        content = request.POST["content"]
-        
-        # save the  edited entry to the disk
-        util.save_entry (title, content)
-
-
-
-        return HttpResponseRedirect (reverse ("encyclopedia:title", args=[title]))
-
-    # GET CASE
-        
-    # Get entry title from request 
-    entry_title = request.GET["title"]
-
-    # Get entry from the entries
-    entry  = util.get_entry (entry_title)
-   
-
-   # Output html page with populated contents.
-    return render (request, "encyclopedia/edit_page.html", {
-        "title": entry_title,
-        "entry": entry,
-    })
-
-
-
-
 def random_page (request):
     # Get all entries
     entries = util.list_entries ()
@@ -169,4 +147,31 @@ def random_page (request):
     # Redirect to that entry page
     return HttpResponseRedirect (reverse ("encyclopedia:title", args=[random_entry]))
 
+
+
+def edit (request, title):
+
+    if request.method == 'POST':
+
+        # Get the edited entry
+        edited_entry =  request.POST["content"]
+        
+        # Remove new lines
+        cleaned_entry = edited_entry.replace ("\r", "")
+
+        # save edited entry to disk
+        util.save_entry (title, cleaned_entry)
+
+        # redirect to the edited entry
+        return HttpResponseRedirect (reverse ("encyclopedia:title", args=[title]))
+
+
+    # Get the entry 
+    entry = util.get_entry (title)
+
+    # render html page with entry
+    return render (request, "encyclopedia/edit_page.html", {
+        "entry": entry,
+        "title": title,
+    })
 
