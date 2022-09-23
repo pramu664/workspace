@@ -149,6 +149,7 @@ def random_page (request):
 
 
 
+
 def edit (request, title):
 
     if request.method == 'POST':

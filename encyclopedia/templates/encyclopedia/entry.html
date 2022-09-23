@@ -8,8 +8,8 @@
 {% block body %}
 		{{ entry|safe }}
 
-		<form action="#" >
-			<input type="hidden" name = "title" value="{{ title }}">
-			<input type="submit" value="Edit">
-		</form>
+		<div>
+			<a href="/encyclopedia/{{ title }}/edit">Edit</a>
+		</div>
+
 {% endblock %}

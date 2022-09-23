@@ -1,1 +1,4 @@
-	#DjangoDjangoisawebframeworkwrittenusing[Python](/wiki/Python)thatallowsforthedesignofwebapplicationsthatgenerate[HTML](/wiki/HTML)dynamically.##HttpResponsehttps://docs.djangoproject.com/en/4.1/ref/request-response/#httpresponse-objects##urlshttps://docs.djangoproject.com/en/4.1/topics/http/urls/##Djangoshortcutfunctionshttps://docs.djangoproject.com/en/4.1/topics/http/shortcuts#render##Templateshttps://docs.djangoproject.com/en/4.1/ref/templates/language/#templates
+#Django
+
+Django is a webframework written using [Python](Python). and  [HTML](HTML) dynamically.
+
