@@ -8,11 +8,12 @@
 {% block body %}
 
 <h1 class="text-muted">Edit Page</h1>
-
-<form action={% url 'encyclopedia:edit' title %} method="post">
-	{% csrf_token %}
-	<textarea class="edit-area" name="content">{{ entry }}</textarea>
-	<input type="submit" value="save" class="btn btn-outline-dark btn-sm"/>
-</form>
+<div class="edit_area">
+	<form action={% url 'encyclopedia:edit' title %} method="post" >
+		{% csrf_token %}
+		<textarea class="edit-area" name="content">{{ entry }}</textarea>
+		<input type="submit" value="save" class="btn btn-info  save"/>
+	</form>
+</div>
 
 {% endblock %}

@@ -8,8 +8,9 @@
 {% block body %}
 		{{ entry| safe }}
 
-		<div>
-			<a class="btn btn-info btn-sm edit_button" href="/encyclopedia/{{ title }}/edit">Edit</a>
+		<div class="edit-area">
+			<a class="btn btn-info  edit_button edit" href="/encyclopedia/{{ title }}/edit">Edit</a>
 		</div>
 
 {% endblock %}
+

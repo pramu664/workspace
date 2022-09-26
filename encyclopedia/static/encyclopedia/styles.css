@@ -44,14 +44,22 @@ h1 {
 
 .content-area {
 	width: 90%;
-	height: 50vh;
 	border: none;
 	border-radius: 5px;
 	outline: none;
 	padding-left: 15px;
 	margin-top: 20px;
+	height: 200px;
 
 }
+
+
+.hide {
+	height: 150vh;
+	border: none;
+	background-color: #D5F27C;
+}
+
 .content-area:focus {
 	outline: none;
 }
@@ -73,8 +81,8 @@ h1 {
 }
 
 .edit-area {
-	width: 80vw;
-	height: 40vw;
+	width: 70vw;
+	height: 100vh;
 	padding: 15px;
 	border: none;
 	border-radius: 5px;
@@ -113,3 +121,44 @@ h1 {
 .edit_button {
 	margin-top: 20px;
 }
+
+.edit_area {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.save  {
+	position: absolute;
+	left: 80%;
+	top: -50px;
+	
+}
+
+.edit {
+	position: absolute;
+	left: 77%;
+	top: 20px;
+}
+
+
+.new_page_area {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.new_page_form{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.create {
+	position: absolute;
+	left: 0px;
+	top: -70px;
+	left: 80%;
+}
+
+

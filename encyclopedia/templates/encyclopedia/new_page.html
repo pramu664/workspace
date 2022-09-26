@@ -7,23 +7,28 @@
 
 
 {% block body %}
-	<h1 class="text-muted">New Page</h1>
-	<hr />
-	
+<div class="new_page_area">
+		<h1 class="text-muted">New Page</h1>
+		<hr />
+		
 
-	{% if message %}
-		<div class="alert alert-warning new_page_error" role="alert">
-				{{ message }}
+
+		<div class="new_page_form">
+			<form action="{% url 'encyclopedia:new_page' %}" method="post" >
+				{% csrf_token %}
+				<input name="title" type="text" placeholder="title..." class="form-control title"></input>
+				<textarea name="content" placeholder="entry..." class="content-area "></textarea>
+				<input type="submit" value="Create" class="btn btn-info  create ">
+
+		{% if message %}
+			<div class="alert alert-warning new_page_error" role="alert">
+					{{ message }}
+			</div>
+		{% endif %}
+
+				<textarea class="hide"></textarea>
+			</form>
 		</div>
-	{% endif %}
-
-	<form action="{% url 'encyclopedia:new_page' %}" method="post">
-		{% csrf_token %}
-		<input name="title" type="text" placeholder="title..." class="form-control title"></input>
-		<textarea name="content" placeholder="entry..." class="content-area "></textarea>
-		<br />
-		<br />
-		<input type="submit" value="Create" class="btn btn-info btn-sm ">
-	</form>
+<div>
 {% endblock %}
 
