@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block body %}
-		{{ entry|safe }}
+		{{ entry| safe }}
 
 		<div>
-			<a href="/encyclopedia/{{ title }}/edit">Edit</a>
+			<a class="btn btn-info btn-sm edit_button" href="/encyclopedia/{{ title }}/edit">Edit</a>
 		</div>
 
 {% endblock %}

@@ -1,0 +1,1 @@
+I am thinking about using Javascript for front end development.

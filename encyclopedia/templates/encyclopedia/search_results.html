@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
-	<ul>	
+<h1 class="text-muted">Search Result...</h1>
+	<ul class="list-group list-group-flush">	
 		{% for entry in entry_set %}
-		<li><a href="{% url 'encyclopedia:title' entry %}">{{ entry }}</a></li>	
+		<li class="list-group-item"><a href="{% url 'encyclopedia:title' entry %}">{{ entry }}</a></li>	
 		{% endfor %}
 	</ul>
 

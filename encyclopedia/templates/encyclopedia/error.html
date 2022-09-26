@@ -5,5 +5,16 @@
 {% endblock %}
 
 {% block body %}
-		<h1>Page Not Found!</h1>
+<div class="alert-container">
+		{% if message %}
+		<br />
+			<div class="alert alert-danger error" role="alert">
+				{{ message }}
+			</div>
+		{% else %}
+			<div class="alert alert-danger error" role="alert">
+				Page Not Found!
+			</div>
+</div>
+		{% endif %}
 {% endblock %}

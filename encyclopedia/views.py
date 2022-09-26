@@ -15,6 +15,7 @@ def index(request):
     })
 
 
+from . import convert
 def entry (request, title):
 
     # Get the entry
@@ -25,31 +26,18 @@ def entry (request, title):
         return render (request, "encyclopedia/error.html")
 
     # CONVERT MARKDOWN TO HTML
-
-    # TODO: Headings
-    html_entry = re.sub ("#(.+)", r"<h1>\1</h1>", entry)
-
-    # TODO: links external link detection
-    html_entry = re.sub ("\[(.+)\]\((.+)\)", r"<a href='\2'>\1</a>", html_entry)
-
-    # TODO  boldfase text: contain bugs
-    html_entry = re.sub ("\*\*(.+)\*\*", r"<b>\1</b>", html_entry)
-
-    # TODO italasize text: contain bugs
-    html_entry = re.sub ("\*(.+)", r"<i>\1</i>", html_entry)
-
-    # paragraphs
-    html_entry = re.sub ("(\n)", r"<br />", html_entry)
-
-    # TODO: Unorderd list
-    # html_entry = re.sub ("", "<li>\1</li>", html_entry)
-    
+    html = convert.heading (entry)
+    html = convert.paragraphs(html)
+    html = convert.external_link (html)
+    html = convert.internal_link (html)
+    html = convert.boldface_text (html)
     
     # display the entry page
     return render (request, "encyclopedia/entry.html", {
         "title": title,
-        "entry": html_entry,
+        "entry": html,
     })
+
 
 
 def search (request):
@@ -96,7 +84,6 @@ def search (request):
     
 
 
-
 def new_page (request):
     if request.method == 'POST':
         
@@ -105,14 +92,18 @@ def new_page (request):
         content = request.POST["content"].strip()
         
         # Check to see title or content provided
-        if (not title) or (not content):
-            message = "Missing title/content"
+        if (not title):
+            message = "Empty Page!"
             return render (request, "encyclopedia/new_page.html", {
                 "message": message,
             })
 
+
         # make the title to lowercase
         cleaned_title = title.lower()
+
+        # Combine title with content
+        content = f"#{title}\n{content}"
 
         # Get all the entries
         entries = util.list_entries()
@@ -124,7 +115,9 @@ def new_page (request):
         
         # Check to see entry is already in the set
         if cleaned_title in cleaned_entries:
-            return render (request, "encyclopedia/error.html")
+            return render (request, "encyclopedia/error.html", {
+                "message": "Page already exist!"
+            })
         
         # save the entry to disk
         util.save_entry (cleaned_title, content)

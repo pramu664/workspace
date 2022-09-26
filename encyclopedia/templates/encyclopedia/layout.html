@@ -14,21 +14,25 @@
 
 				<div class="sidebar col-lg-2 col-md-3">
 
+					<h1 class="logo">WIKI</h1>
+
 					<form action="{% url 'encyclopedia:search' %}" method="get"  >
-							<input class="search" type="text" name="q" placeholder="search notes">
+							<input class="search form-control" type="text" name="q" placeholder="Search Encyclopedia...">
 					</form>
 
-					<div>
-						<a href="{% url 'encyclopedia:index' %}">Home</a>
-					</div>
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'encyclopedia:index' %}">🏠 Home</a>
+							</li>
 
-					<div>
-						<a href="{% url 'encyclopedia:new_page' %}">Create New Page</a>
-					</div>
-	
-					<div>
-						<a href="{% url 'encyclopedia:random_page' %}">Random Page</a>
-					</div>
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'encyclopedia:new_page' %}">📄 New Page</a>
+							</li>
+			
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'encyclopedia:random_page' %}">📜 Random Page</a>
+							</li>
+						</ul>
 
 					{% block nav %}
 					{% endblock %}
