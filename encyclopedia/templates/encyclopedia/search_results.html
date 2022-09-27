@@ -10,6 +10,8 @@
 		{% for entry in entry_set %}
 		<li class="list-group-item"><a href="{% url 'encyclopedia:title' entry %}">{{ entry }}</a></li>	
 		{% endfor %}
+		<textarea class="hide"></textarea>
 	</ul>
+
 
 {% endblock %}

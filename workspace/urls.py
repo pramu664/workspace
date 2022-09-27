@@ -23,4 +23,6 @@ urlpatterns = [
     path ("tasks/", include ("tasks.urls")),
     path ('encyclopedia/', include ('encyclopedia.urls')),
     path ("mail/", include ("mail.urls")),
+    path ("flights/", include ("flights.urls")),
+    path ("users", include ("users.urls")),
 ]

@@ -162,3 +162,15 @@ h1 {
 }
 
 
+.hide_area {
+	background-color: #D5F27C;
+	border: none;
+	height: 1000px;
+}
+
+
+.search_page {
+	background-color: blue;
+	width: 100%;
+	height: 100%;
+}

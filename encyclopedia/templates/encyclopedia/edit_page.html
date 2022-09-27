@@ -13,7 +13,9 @@
 		{% csrf_token %}
 		<textarea class="edit-area" name="content">{{ entry }}</textarea>
 		<input type="submit" value="save" class="btn btn-info  save"/>
+		<textarea class="hide_area"></textarea>
 	</form>
 </div>
 
 {% endblock %}
+
